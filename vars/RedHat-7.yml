@@ -9,6 +9,6 @@
 
 nfs_default_packages:
   - name: 'nfs-utils'
-  - name: 'nfs-utils-lib'
+  - name: 'libnfsidmap'
 
-nfs_default_service_name: 'nfs'
+nfs_default_service_name: 'nfs-server'

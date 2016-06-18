@@ -18,6 +18,18 @@
     - 'configure'
     - 'service'
 
+- name: 'NFS | Include distribution-specific variables.'
+  include_vars: 'RedHat-7.yml'
+  when: '{{ ansible_os_family == "RedHat" and ansible_distribution_major_version == "7" }}'
+  tags:
+    - 'nfs'
+    - 'nfs-package'
+    - 'nfs-configure'
+    - 'nfs-service'
+    - 'package'
+    - 'configure'
+    - 'service'
+
 - name: 'NFS | Define NFS service name.'
   set_fact:
     nfs_service_name: '{{ nfs_default_service_name }}'
