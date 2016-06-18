@@ -11,8 +11,8 @@
   become: yes
   service:
     name: 'rpcbind'
-    state: 'started'
-    enabled: yes
+    state: '{{ nfs_service_state }}'
+    enabled: '{{ nfs_service_enabled }}'
   when: '{{ ansible_os_family == "RedHat" }}'
 
 - name: 'NFS | Enable NFS service.'

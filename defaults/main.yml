@@ -11,3 +11,6 @@ nfs_packages:
 nfs_service_name:
 nfs_service_state: 'started'
 nfs_service_enabled: yes
+nfs_exports_template: 'exports.j2'
+nfs_exports:
+nfs_mounts:

@@ -12,3 +12,4 @@
   service:
     name: '{{ nfs_service_name }}'
     state: 'restarted'
+  when: '{{ nfs_service_enabled }}'
