@@ -35,7 +35,7 @@
     name: '{{ item.name }}'
     dump: '{{ item.dump | default(omit) }}'
     fstab: '{{ item.fstab | default(omit) }}'
-    fstype: '{{ item.fstab | default(omit) }}'
+    fstype: '{{ item.fstype | default(omit) }}'
     opts: '{{ item.opts | default(omit) }}'
     passno: '{{ item.passno | default(omit) }}'
     src: '{{ item.src | default(omit) }}'
