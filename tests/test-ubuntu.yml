@@ -1,0 +1,25 @@
+# Copyright (c) Ontic. (http://www.ontic.com.au). All rights reserved.
+# See the COPYING file bundled with this package for license details.
+
+---
+
+- hosts: 'localhost'
+  pre_tasks:
+    - name: 'Add APT key for xenial-updates repository'
+      become: yes
+      apt_key:
+        keyserver: 'keyserver.ubuntu.com'
+        id: '40976EAF437D05B5'
+      when: 'ansible_distribution == "Ubuntu"'
+    - name: 'Add xenial-updates repository'
+      become: yes
+      apt_repository:
+        repo: 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe'
+        update_cache: yes
+      when: 'ansible_distribution == "Ubuntu"'
+  vars:
+    - name: 'nfs-common'
+    - name: 'nfs-kernel-server'
+      default_release: 'xenial-updates'
+  roles:
+    - { role: 'role_under_test' }
