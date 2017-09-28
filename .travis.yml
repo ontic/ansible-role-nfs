@@ -12,7 +12,6 @@ env:
     version: '9'
   - distribution: 'ubuntu'
     version: '16.04'
-    playbook: 'test-ubuntu.yml'
 
 before_install:
   - 'export container_id=$(date +%s)'
