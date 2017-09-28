@@ -11,18 +11,16 @@
         keyserver: 'keyserver.ubuntu.com'
         id: '40976EAF437D05B5'
       when: 'ansible_distribution == "Ubuntu"'
-    - name: 'Add xenial-updates repository'
+    - name: 'Add artful repository'
       become: yes
       apt_repository:
-        repo: 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe'
+        repo: 'deb http://us.archive.ubuntu.com/ubuntu/ artful main'
         update_cache: yes
       when: 'ansible_distribution == "Ubuntu"'
   vars:
-    - name: 'nfs-utils'
-      default_release: 'xenial-updates'
     - name: 'nfs-common'
-      default_release: 'xenial-updates'
+      default_release: 'artful'
     - name: 'nfs-kernel-server'
-      default_release: 'xenial-updates'
+      default_release: 'artful'
   roles:
     - { role: 'role_under_test' }
