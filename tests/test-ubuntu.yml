@@ -17,10 +17,5 @@
         repo: 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe'
         update_cache: yes
       when: 'ansible_distribution == "Ubuntu"'
-  vars:
-    - name: 'nfs-common'
-      default_release: 'xenial-updates'
-    - name: 'nfs-kernel-server'
-      default_release: 'xenial-updates'
   roles:
     - { role: 'role_under_test' }
