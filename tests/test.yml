@@ -9,6 +9,7 @@
       apt_key:
         keyserver: 'keyserver.ubuntu.com'
         id: '40976EAF437D05B5'
+      when: 'ansible_distribution == "Debian"'
     - name: 'Add xenial-updates repository'
       apt_repository:
         repo: 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe'
