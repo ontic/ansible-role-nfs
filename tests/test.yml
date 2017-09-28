@@ -5,7 +5,7 @@
 
 - hosts: 'localhost'
   pre_tasks:
-    - name: 'Add repository xenial-updates'.
+    - name: 'Add repository xenial-updates'
       apt_repository:
         repo: 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe'
         update_cache: yes
