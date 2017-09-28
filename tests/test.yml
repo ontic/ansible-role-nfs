@@ -5,7 +5,11 @@
 
 - hosts: 'localhost'
   pre_tasks:
-    - name: 'Add repository xenial-updates'
+    - name: 'Add APT key for xenial-updates repository'
+      apt_key:
+        keyserver: 'keyserver.ubuntu.com'
+        id: '40976EAF437D05B5'
+    - name: 'Add xenial-updates repository'
       apt_repository:
         repo: 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe'
         update_cache: yes
