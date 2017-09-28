@@ -19,6 +19,7 @@
       when: 'ansible_distribution == "Ubuntu"'
   vars:
     - name: 'nfs-common'
+      default_release: 'xenial-updates'
     - name: 'nfs-kernel-server'
       default_release: 'xenial-updates'
   roles:
