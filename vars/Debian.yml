@@ -4,6 +4,7 @@
 ---
 
 nfs_default_packages:
+  - name: 'nfs-utils'
   - name: 'nfs-common'
   - name: 'nfs-kernel-server'
 
