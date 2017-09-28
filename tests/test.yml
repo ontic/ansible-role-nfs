@@ -5,10 +5,16 @@
 
 - hosts: 'localhost'
   pre_tasks:
-      - name: 'Add artful repository'
+      - name: 'Add APT key for Artful repository'
+        become: yes
+        apt_key:
+          keyserver: 'keyserver.ubuntu.com'
+          id: '40976EAF437D05B5'
+        when: 'ansible_distribution == "Ubuntu"'
+      - name: 'Add Artful repository to fix bug 1590799'
         become: yes
         apt_repository:
-          repo: 'ppa:inaddy/lp1590799'
+          repo: 'deb http://us.archive.ubuntu.com/ubuntu/ artful main'
           update_cache: yes
         when: 'ansible_distribution == "Ubuntu"'
   roles:
