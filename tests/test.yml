@@ -5,16 +5,10 @@
 
 - hosts: 'localhost'
   pre_tasks:
-      - name: 'Add APT key for xenial-updates repository'
-        become: yes
-        apt_key:
-          keyserver: 'keyserver.ubuntu.com'
-          id: '40976EAF437D05B5'
-        when: 'ansible_distribution == "Ubuntu"'
       - name: 'Add artful repository'
         become: yes
         apt_repository:
-          repo: 'deb http://us.archive.ubuntu.com/ubuntu/ artful main'
+          repo: 'ppa:inaddy/lp1590799'
           update_cache: yes
         when: 'ansible_distribution == "Ubuntu"'
   roles:
