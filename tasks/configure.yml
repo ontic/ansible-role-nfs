@@ -29,6 +29,7 @@
   become: yes
   mount:
     name: '{{ item.name }}'
+    boot: '{{ item.boot | default(omit) }}'
     dump: '{{ item.dump | default(omit) }}'
     fstab: '{{ item.fstab | default(omit) }}'
     fstype: '{{ item.fstype | default(omit) }}'
