@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (c) Ontic. (http://www.ontic.com.au). All rights reserved.
+# See the COPYING file bundled with this package for license details.
 
 # Verify the installed NFS server version.
 docker exec --tty ${container_id} env TERM=xterm /usr/sbin/rpcinfo -p | grep nfs
