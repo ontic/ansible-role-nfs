@@ -9,3 +9,8 @@
     name: '{{ nfs_service_name }}'
     state: 'restarted'
   when: 'nfs_service_enabled'
+
+- name: 'reload exports'
+  become: yes
+  command: 'exportfs -ra'
+  when: 'nfs_service_enabled'

@@ -11,7 +11,7 @@
     owner: '{{ item.owner | default(omit) }}'
     group: '{{ item.group | default(omit) }}'
     mode: '{{ item.mode | default("0755") }}'
-  notify: 'restart nfs'
+  notify: 'reload exports'
   with_items: '{{ nfs_exports }}'
   when: 'nfs_exports | default(None) != None'
 
@@ -23,7 +23,7 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  notify: 'restart nfs'
+  notify: 'reload exports'
 
 - name: 'NFS | Configure mounts.'
   become: yes
